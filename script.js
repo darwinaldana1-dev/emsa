@@ -72,7 +72,7 @@ function initStickyCTAHelper() {
 
 // Product Gallery Configuration
 const GALLERY_IMAGE_COUNT = 10; // <-- Cambia este número a la cantidad de fotos que pongas en images/galeria/
-const BODY_IMAGE_COUNT = 10; // <-- Cambia este número a la cantidad de fotos que pongas en images/cuerpo/
+const BODY_IMAGE_COUNT = 2; // <-- Cambia este número a la cantidad de fotos que pongas en images/cuerpo/
 
 // Customer Reviews Configuration
 const CUSTOMER_REVIEWS = [
@@ -616,6 +616,12 @@ form.addEventListener('submit', async function (e) {
 
 // Run Init
 document.addEventListener('DOMContentLoaded', () => {
+    // Force scroll to top on every load
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     init();
     initBodyImages();
     initReviews();
